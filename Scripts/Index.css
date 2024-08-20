@@ -1,0 +1,43 @@
+﻿
+/* Media Query for Responsive Design */
+@media only screen and (max-width: 768px) {
+    .banners h1 {
+        font-size: 2.5em;
+    }
+
+    .banners p {
+        font-size: 1.2em;
+        max-width: 90%;
+    }
+
+    .content {
+        padding: 20px;
+    }
+
+        .content h2 {
+            font-size: 2em;
+        }
+
+        .content p {
+            font-size: 1em;
+        }
+}
+
+@media only screen and (max-width: 480px) {
+    .banners h1 {
+        font-size: 1.8em;
+    }
+
+    .banners p {
+        font-size: 1em;
+        max-width: 90%;
+    }
+
+    .content h2 {
+        font-size: 1.5em;
+    }
+
+    .content p {
+        font-size: 0.9em;
+    }
+}

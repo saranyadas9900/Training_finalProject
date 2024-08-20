@@ -1,0 +1,14 @@
+﻿.banner {
+    position: relative;
+    background: url('@Url.Content("~/Content/images/image2.jpg")');
+    color: white;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-size: 100% 100%;
+    background-position: center;
+    height: 100vh;
+}

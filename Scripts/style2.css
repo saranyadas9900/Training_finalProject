@@ -1,0 +1,7 @@
+﻿/* Responsive adjustments */
+@media (max-width: 768px) {
+    .form-container, .info-container {
+        width: 100%;
+        flex-basis: 100%;
+    }
+}
