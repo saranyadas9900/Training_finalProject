@@ -1,0 +1,107 @@
+﻿@{
+    ViewData["Title"] = "Real Estate Portal";
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Find your dream home with our real estate portal. Browse listings, contact agents, and more.">
+    <title>@ViewData["Title"]</title>
+   <link rel="stylesheet" href="~/Scripts/Index.css" />
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            background-color: #f4f4f4;
+            background-size: cover; /* Light background for the body */
+        }
+
+        .banners {
+            display: flex;
+            background: url('https://copilot-blog.ghost.io/content/images/2024/02/real-estate-business-names.jpg') no-repeat center center;
+            background-size: cover; /* Ensure the image covers the entire container */
+            color: white;
+            width: 100vw; /* Full width of the parent container */
+            height: 100vh; /* Full viewport height */
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            overflow: hidden; /* Prevents overflow */
+            bottom: 15px;
+            right: 220px; /* Ensure it ends at the right edge */
+            position: relative; /* Ensure proper positioning */
+        }
+
+
+            .banners::before {
+                content: "";
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+                z-index: 1;
+            }
+
+        .banner-content {
+            position: relative;
+            z-index: 2;
+            color: #fff; /* Ensures text is white */
+        }
+
+        .banners h1 {
+            font-size: 4em;
+            margin: 0.5em 0;
+            font-weight: 700; /* Bold font */
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Adds a shadow for better readability */
+        }
+
+        .banners p {
+            font-size: 1.5em;
+            margin: 0.5em 0;
+            max-width: 800px;
+            line-height: 1.6; /* Improves readability */
+            text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5); /* Adds shadow for better readability */
+        }
+
+        .content {
+            padding: 50px;
+            text-align: center;
+        }
+
+            .content h2 {
+                font-size: 2.5em;3.
+                margin-bottom: 20px;
+            }
+
+            .content p {
+                font-size: 1.2em;
+                margin-bottom: 20px;
+                line-height: 1.6;
+            }
+    </style>
+    <link rel="stylesheet" href="~/Scripts/style2.css" />
+</head>
+<body>
+    <div class="banners">
+        <div class="banner-content">
+            <h1>Find Your Dream Home</h1>
+            <p>View listings, contact agents, and more with our comprehensive real estate portal.</p>
+        </div>
+    </div>
+    <div class="content">
+        <h2>Welcome to Our Real Estate Portal</h2>
+        <p>At our portal, we provide you with the best listings to find your dream home. Whether you are looking for a cozy apartment in the city or a spacious house in the suburbs, our extensive database of properties caters to all your needs.</p>
+        <p>We also offer tools and resources to help you make informed decisions. Contact our agents for personalized assistance and make your home buying journey smooth and hassle-free.</p>
+    </div>
+   
+
+</body>
+</html>

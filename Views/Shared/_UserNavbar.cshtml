@@ -1,0 +1,39 @@
+﻿<head>
+
+    <style>
+        .bg-elegant-purple {
+            background-color: #6F42C1; /* A deep purple color */
+        }
+    </style>
+   
+</head>
+<body>
+
+
+<nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-dark bg-elegant-purple">
+    <div class="container">
+        @Html.ActionLink("User Dashboard", "Index", "User", new { area = "" }, new { @class = "navbar-brand" })
+        <button type="button" class="navbar-toggler" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" title="Toggle navigation" aria-controls="navbarSupportedContent"
+                aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse d-sm-inline-flex justify-content-between">
+            <ul class="navbar-nav flex-grow-1">
+                <li>@Html.ActionLink("Home", "Index", "User", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("ViewPropertyListings", "ViewPropertyListings", "User", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("ViewFavoriteProperties", "ViewFavoriteProperties", "User", new { area = "" }, new { @class = "nav-link" })</li>
+                <li>@Html.ActionLink("SearchProperties", "SearchProperties", "User", new { area = "" }, new { @class = "nav-link" })</li>
+
+
+
+            </ul>
+            <ul class="navbar-nav navbar-right">
+                <li>@Html.ActionLink("ChangePassword", "ChangePassword", "User", routeValues: null, htmlAttributes: new { id = "registerLink", @class = "nav-link" })</li>
+                <li>@Html.ActionLink("Log out", "Logout", "Auth", routeValues: null, htmlAttributes: new { id = "loginLink", @class = "nav-link" })</li>
+            </ul>
+
+        </div>
+    </div>
+</nav>
+
+    </body>

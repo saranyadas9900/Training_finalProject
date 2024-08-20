@@ -1,0 +1,92 @@
+﻿@model WebApplication4.Models.User
+
+@{
+    ViewBag.Title = "User Home";
+}
+
+
+<div class="container1 mt-5">
+    <div class="card shadow-lg rounded-lg">
+        <div class="card-header  text-white text-center rounded-top">
+            <h2 class="mb-0">Welcome, @Model.FirstName @Model.LastName</h2>
+        </div>
+        <div class="card-body text-center">
+            <p class="card-text mb-4">Manage your account, view PropertyListings, and access various features. Enjoy a seamless experience with our portal.</p>
+            <a href="@Url.Action("ProfileUser", "User")" class="btn btn-primary btn-lg">View Profile</a>
+        </div>
+        <div class="card-footer bg-light text-center rounded-bottom">
+            <small class="text-muted">Last login: @DateTime.Now.ToString("MMMM d, yyyy h:mm tt")</small>
+        </div>
+    </div>
+</div>
+
+<style>
+    body {
+        background-color: #f8f9fa; /* Light background color */
+    }
+
+    .container1 {
+        max-width: 800px;
+        margin: auto;
+        padding: 20px;
+    }
+
+    .card {
+        border: none;
+        border-radius: 15px;
+        overflow: hidden;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+        .card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+        }
+
+    .card-header {
+        background-color: #FFB200; /* Primary color */
+        border-bottom: none;
+        border-radius: 15px 15px 0 0;
+        padding: 20px;
+    }
+
+        .card-header h2 {
+            margin: 0;
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+    .card-body {
+        padding: 30px;
+    }
+
+    .card-text {
+        font-size: 1.1rem;
+        color: #333;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+        padding: 10px 20px;
+        font-size: 1.1rem;
+        border-radius: 5px;
+        transition: background-color 0.3s, border-color 0.3s;
+    }
+
+        .btn-primary:hover {
+            background-color: #0056b3;
+            border-color: #004085;
+        }
+
+    .card-footer {
+        background-color: #f8f9fa;
+        border-top: none;
+        padding: 15px;
+    }
+
+        .card-footer small {
+            color: #6c757d;
+            font-size: 0.9rem;
+        }
+</style>

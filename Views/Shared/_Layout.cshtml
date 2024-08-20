@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>@ViewBag.Title - My ASP.NET Application</title>
+
+    <!-- Render any styles defined in views -->
+    @RenderSection("Styles", required: false)
+    <script>
+        window.history.pushState(null, "", window.location.href);
+        window.onpopstate = function () {
+            window.history.pushState(null, "", window.location.href);
+        };
+    </script>
+    
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+    <link href="~/Content/site.css" rel="stylesheet" type="text/css" />
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+
+</head>
+
+<body>
+    <header>
+        @if (Session["UserId"] != null && ViewContext.RouteData.Values["action"].ToString() != "SignUp")
+        {
+            @Html.Partial("_UserNavbar")
+        }
+        else if (Session["Admin"] != null && ViewContext.RouteData.Values["action"].ToString() != " Login")
+        {
+            // Admin Navbar
+            @Html.Partial("_AdminNavbar")
+        }
+        else if (Session["AgentId"] != null && ViewContext.RouteData.Values["action"].ToString() != "SignIn")
+        {
+            // Agent Navbar
+            @Html.Partial("_AgentNavbar")
+        }
+        else
+        {
+            @Html.Partial("_DefaultNavbar")
+        }
+    </header>
+
+    <div class="container body-content">
+        @RenderBody()
+        <hr />
+        <div class="footer-bottom">
+            <div class="container">
+                <p class="text-center">© @DateTime.Now.Year Realestate Portal. All rights reserved.</p>
+            </div><!-- Footer content here -->
+        </div>
+    </div>
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/bootstrap")
+    <script src="~/Scripts/jquery.validate.min.js"></script>
+    <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+    @RenderSection("scripts", required: false)
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+   
+
+</body>
+</html>

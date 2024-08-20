@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WebApplication4.Models.PropertyListing>
+
+@{
+    ViewBag.Title = "Search Results";
+}
+
+<h2>Search Results</h2>
+
+@if (Model.Any())
+{
+    <div class="search-results-container">
+        @foreach (var property in Model)
+        {
+            <div class="property-card">
+                <div class="property-photo">
+                    @if (!string.IsNullOrEmpty(property.PhotoBase64))
+                    {
+                        <img src="data:image/jpeg;base64,@property.PhotoBase64" alt="Property Photo" />
+                    }
+                    else
+                    {
+                        <img src="path/to/default/image.jpg" alt="No Photo" />
+                    }
+                </div>
+                <div class="property-details">
+                    <h3>@property.Title</h3>
+                    <p>@property.Description</p>
+                    <p><strong>Address:</strong> @property.Address, @property.City, @property.State, @property.ZipCode</p>
+                    <p><strong>Price:</strong> @property.Price.ToString("C")</p>
+                    <p><strong>Bedrooms:</strong> @property.Bedrooms</p>
+                    <p><strong>Bathrooms:</strong> @property.Bathrooms</p>
+                    <p><strong>Listing Date:</strong> @property.ListingDate.ToShortDateString()</p>
+                </div>
+            </div>
+        }
+    </div>
+}
+else
+{
+    <p>No search results found.</p>
+}
+
+<style>
+    .search-results-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: space-between;
+    }
+
+    .property-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 15px;
+        width: calc(33.333% - 20px); /* Adjust card width for a 3-column layout with a 20px gap */
+        box-sizing: border-box;
+        background-color: #fff;
+    }
+
+        .property-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 5px;
+            margin-bottom: 10px;
+        }
+
+    .property-details h3 {
+        margin-top: 0;
+        margin-bottom: 10px;
+        color: #333;
+        font-size: 1.25em;
+    }
+
+    .property-details p {
+        margin: 5px 0;
+        color: #555;
+    }
+
+    .property-details strong {
+        color: #000;
+    }
+</style>
